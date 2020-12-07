@@ -9,6 +9,7 @@
   "author": "Andrew Nijmeh",
   "license": "MIT",
   "dependencies": {
+    "firebase": "^8.1.2",
     "firebase-tools": "^8.18.0",
     "react": "^17.0.1"
   }
