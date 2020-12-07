@@ -1,0 +1,15 @@
+{
+  "name": "firebase-login-school",
+  "version": "1.0.1",
+  "description": "A google authentication system",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Nijmeh",
+  "license": "MIT",
+  "dependencies": {
+    "firebase-tools": "^8.18.0",
+    "react": "^17.0.1"
+  }
+}
