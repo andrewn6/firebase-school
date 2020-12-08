@@ -2,15 +2,21 @@ import React, {useRef} from 'react'
 import { Form, Button, Card, Alert } from "react-bootstrap"
 import { Link, useHistory } from "react-router-dom"
 import {useAuth} from '../context/AuthContext'
+import useState from 'react'
 
 export default function Signup({children}) {
     const emailRef = useRef()
     const passwordRef = useRef()
     const passwordConfirmRef = useRef()
     const {signup } = useAuth()
+    const [error, setError] = useState('')
 
     function handleSumbit(e){
         e.preventDefault()
+
+        if (passwordRef.current.value == passwordConfirmRef.current.value) {
+            return  setError('Passwords do not match')
+        }
         signup(emailRef.current.value, passwordRef.current.value)
     }
 
