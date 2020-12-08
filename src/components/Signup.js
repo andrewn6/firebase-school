@@ -10,14 +10,23 @@ export default function Signup({children}) {
     const passwordConfirmRef = useRef()
     const {signup } = useAuth()
     const [error, setError] = useState('')
+    const [loading, setLoading] = useState(false)
 
     function handleSumbit(e){
         e.preventDefault()
 
-        if (passwordRef.current.value == passwordConfirmRef.current.value) {
+        if (passwordRef.current.value !== passwordConfirmRef.current.value) {
             return  setError('Passwords do not match')
         }
-        signup(emailRef.current.value, passwordRef.current.value)
+
+        try{
+            setError('')
+            setLoading(true)
+         await signup(emailRef.current.value, passwordRef.current.value)
+        } catch {
+            setError('Failed to create an account')
+        }
+        setLoading(false)
     }
 
     return (
@@ -25,7 +34,7 @@ export default function Signup({children}) {
             <Card>
                 <Card.Body>
                     <h2 className="text-center mb-4">Sign Up</h2>
-                    {error && <Alert variant="danger">{error}</Alert>}
+                    {error && <Alert variant="danger">{error}Error</Alert>}
                     <Form onSubmit={handleSubmit}>
                     <Form.Group id="email">
                         <Form.Label>Email</Form.Label>
@@ -40,7 +49,7 @@ export default function Signup({children}) {
                         <Form.Control type="password" ref={passwordConfirmRef} required />
                     </Form.Group>
                 <Button disabled={loading} className="w-100" type="submit">
-              Sign Up
+                Sign Up
             </Button>
           </Form>
         </Card.Body>
