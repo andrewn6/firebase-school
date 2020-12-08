@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import {Form, Button, Card} from 'react-bootstrap'
 
 export default function Signup() {
@@ -20,6 +20,7 @@ export default function Signup() {
                             <Form.Label>Password Confirm</Form.Label>
                             <Form.Control> type="password-confirm" ref={passwordConfirmRef} required /</Form.Control>
                         </Form.Group>
+                        <Button className="w-100" type="submit">Sign up</Button>
                     </Form>
                 </Card.Body>
             </Card>
