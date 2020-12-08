@@ -24,7 +24,10 @@ export default function Login({children}) {
 
     } catch{
         setError("Failed to log in :/")
+        
+    setLoading(false)
     }
+    
     return(
 
     )
