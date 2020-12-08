@@ -28,7 +28,7 @@ export default function Dashboard() {
             <Card>
                 <Card.Body>
                     <h2 className="text-center mb-4"></h2>
-                    // Error handling
+                    // Error handling is very cool
                     {error && <Alert variant="danger">{error}</Alert>}
                     <strong>Email:</strong> {currentUser.email}
                 </Card.Body>

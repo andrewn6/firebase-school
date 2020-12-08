@@ -19,6 +19,7 @@ export default function Login({children}) {
     try{
         setError('')
         setLoading(true)
+        // We use the useAuth() as that is what we imported from contexted :)
         await login(emailRef.current.value, passwordRef.current.value)
         history.push('/')
 
