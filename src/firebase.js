@@ -1,5 +1,5 @@
-import firebase from "firebase/app";
-import "firebase/auth";
+import firebase from "firebase/app"
+import "firebase/auth"
 
 const app = firebase.initalizeApp({
     apiKey: process.env.apiKey,
@@ -10,3 +10,6 @@ const app = firebase.initalizeApp({
     appId: process.env.appId,
     measurementId: process.env.measurementId
 })
+
+export const auth = app.auth()
+export default app
