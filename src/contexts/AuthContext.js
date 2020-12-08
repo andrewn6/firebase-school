@@ -19,6 +19,9 @@ export function AuthProvider({ children }) {
     function signup(email, password) {
         auth.createUserWithEmailAndPassword(email, password)
     }
+    auth.onAuthStateChanged(user => {
+        setCurrentUser(user)
+    })
     return (
         <AuthContext.Provider>
             {children}
