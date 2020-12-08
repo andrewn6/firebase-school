@@ -4,11 +4,13 @@
   "description": "A google authentication system",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "react-scripts start"
   },
   "author": "Andrew Nijmeh",
   "license": "MIT",
   "dependencies": {
+    "bootstrap": "^4.5.3",
     "firebase": "^8.1.2",
     "firebase-tools": "^8.18.0",
     "react": "^17.0.1",
