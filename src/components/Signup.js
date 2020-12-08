@@ -11,18 +11,20 @@ export default function Signup({children}) {
     const {signup } = useAuth()
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
+    const history = useHistory()
 
     function handleSumbit(e){
         e.preventDefault()
 
         if (passwordRef.current.value !== passwordConfirmRef.current.value) {
-            return  setError('Passwords do not match')
+            return  setError('Passwords do not match!')
         }
 
         try{
             setError('')
             setLoading(true)
          await signup(emailRef.current.value, passwordRef.current.value)
+         history.push('/')
         } catch {
             setError('Failed to create an account')
         }
