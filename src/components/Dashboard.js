@@ -3,6 +3,7 @@ import Container from "react-bootstrap"
 import useEffect from "react"
 import useRef from "react"
 import useHistory from "react-router-dom"
+import {Card, Button, Alert} from "react-bootstrap"
 export default function Dashboard() {
 
     const [error, setError] = useState('')
@@ -20,4 +21,18 @@ export default function Dashboard() {
             setError("Failed to log out :(")
         }
     }
+
+    // React stuff here
+    return(
+        <>
+            <Card>
+                <Card.Body>
+                    <h2 className="text-center mb-4"></h2>
+                    // Error handling
+                    {error && <Alert variant="danger">{error}</Alert>}
+                    <strong>Email:</strong> {currentUser.email}
+                </Card.Body>
+            </Card>
+        </>
+    )
 }
