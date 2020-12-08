@@ -1,14 +1,18 @@
 import React, {useRef} from 'react'
 import { Form, Button, Card, Alert } from "react-bootstrap"
 import { Link, useHistory } from "react-router-dom"
+import {useAuth} from '../context/AuthContext'
+
 export default function Signup({children}) {
     const emailRef = useRef()
     const passwordRef = useRef()
     const passwordConfirmRef = useRef()
-    const { signup } = useAuth()
-    const [error, setError] = useState("")
-    const [loading, setLoading] = useState(false)
-    const history = useHistory()
+    const {signup } = useAuth()
+
+    function handleSumbit(e){
+        e.preventDefault()
+        signup(emailRef.current.value, passwordRef.current.value)
+    }
 
     return (
         <>
