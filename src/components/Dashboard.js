@@ -32,14 +32,12 @@ export default function Dashboard() {
                     {error && <Alert variant="danger">{error}</Alert>}
                     <strong>Email:</strong> {currentUser.email}
                 </Card.Body>
-
             </Card>
             <div className="w-100 text-center mt-2">
                 // Use handle logout function :)
                 <Button variant="link" onClick={handleLogout}>
                     Log out
                 </Button>
-
             </div>
         </>
     )

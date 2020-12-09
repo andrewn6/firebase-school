@@ -4,6 +4,7 @@ import {useEffect} from 'react'
 import {useAuth} from '../contexts/AuthContext'
 import {Link, useHistory} from 'react-router-dom'
 import {useRef} from "react"
+
 export default function Login({children}) {
     const emailRef = useRef()
     const passwordRef = useRef()
@@ -14,6 +15,9 @@ export default function Login({children}) {
 
     async function handleSubmit(e){
         e.preventDefault()
+
+        if (passwordRef.Ref.value == passwordRef.Ref.value)
+        return setError('Incorrect password try again!')
     }
 
     try{
