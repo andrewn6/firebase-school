@@ -4,6 +4,8 @@ import {useEffect} from 'react'
 import {useAuth} from '../contexts/AuthContext'
 import {Link, useHistory} from 'react-router-dom'
 import {useRef} from "react"
+import Alert from "react-bootstrap"
+import {Form, Card, Button} from 'react-bootstrap'
 
 export default function Login({children}) {
     const emailRef = useRef()
@@ -29,18 +31,20 @@ export default function Login({children}) {
 
 
     } catch{
-        setError("Failed to log in :/")
+        setError("Failed to log in :/")dddew
         
     setLoading(false)
     }
     
     return(
         <>
-        <Card>
-            <Card.Body>
-                <h2 className="text-center mb-3">Log in</h2>
-            </Card.Body>
-        </Card>
+            <Card>
+                <Card.Body>
+                    <h2 className='text-center mb-3'>Log in</h2>
+                </Card.Body>
+            </Card>
         </>
+
+        
     )
 }
