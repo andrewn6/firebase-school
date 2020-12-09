@@ -15,7 +15,7 @@ export default function Login({children}) {
     const [loading, setLoading] = useState(false)
     const history = useHistory()
 
-    async function handleSubmit(e){
+    async function handleLogin(e){
         e.preventDefault()
 
         if (passwordRef.Ref.value == passwordRef.Ref.value)
@@ -31,7 +31,7 @@ export default function Login({children}) {
 
 
     } catch{
-        setError("Failed to log in :/")dddew
+        setError("Failed to log in :/")
         
     setLoading(false)
     }
@@ -41,6 +41,8 @@ export default function Login({children}) {
             <Card>
                 <Card.Body>
                     <h2 className='text-center mb-3'>Log in</h2>
+                    {error && <Alert variant="danger">{error}Error</Alert>}
+                    <Firn inSubmit={handleSubmit}
                 </Card.Body>
             </Card>
         </>
