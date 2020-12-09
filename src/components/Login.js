@@ -35,6 +35,12 @@ export default function Login({children}) {
     }
     
     return(
-
+        <>
+        <Card>
+            <Card.Body>
+                <h2 className="text-center mb-3">Log in</h2>
+            </Card.Body>
+        </Card>
+        </>
     )
 }
