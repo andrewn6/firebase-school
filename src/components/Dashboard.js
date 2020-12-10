@@ -4,6 +4,8 @@ import useEffect from "react"
 import useRef from "react"
 import useHistory from "react-router-dom"
 import {Card, Button, Alert} from "react-bootstrap"
+import {useAuth} from '../contexts/AuthContext'
+
 export default function Dashboard() {
 
     const [error, setError] = useState('')
