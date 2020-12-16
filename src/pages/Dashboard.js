@@ -3,6 +3,7 @@ import Container from "react-bootstrap"
 import useEffect from "react"
 import useRef from "react"
 import useHistory from "react-router-dom"
+import useAuth from './context/AuthContext'
 import {Card, Button, Alert} from "react-bootstrap"
 export default function Dashboard() {
 
@@ -21,6 +22,9 @@ export default function Dashboard() {
             setError("Failed to log out :(")
         }
     }
+
+
+    async function
 
     // React stuff here
     return(

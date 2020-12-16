@@ -42,7 +42,19 @@ export default function Login({children}) {
                 <Card.Body>
                     <h2 className='text-center mb-3'>Log in</h2>
                     {error && <Alert variant="danger">{error}Error</Alert>}
-                    <Firn inSubmit={handleSubmit}
+                    <Form inSubmit={handleSubmit}>
+                    <Form.Group id='email'>
+                        <Form.Label>Email</Form.Label>
+                        <Form.Control type="email" ref={emailRef} required />
+                    </Form.Group>
+                    <Form.Group id="password">
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control type="password" ref={passwordRef} required />
+                    </Form.Group>
+                <Button disabled={loading} className="w-100" type="submit">
+                    Log import { moduleName } from 'react-native'
+                </Button>
+                    </Form>
                 </Card.Body>
             </Card>
         </>
