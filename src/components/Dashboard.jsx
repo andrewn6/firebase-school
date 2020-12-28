@@ -5,6 +5,8 @@ import useRef from "react"
 import useHistory from "react-router-dom"
 import useAuth from './context/AuthContext'
 import {Card, Button, Alert} from "react-bootstrap"
+import {useAuth} from '../contexts/AuthContext'
+
 export default function Dashboard() {
 
     const [error, setError] = useState('')
@@ -24,8 +26,18 @@ export default function Dashboard() {
     }
 
 
-    async function
+    async function changeEmail(){
 
+        setError('')
+
+        try{
+            await updateEmail()
+            history.push("")
+        } catch{
+            setError("Failed to change email :(")
+        }
+
+    }
     // React stuff here
     return(
         <>
@@ -37,7 +49,7 @@ export default function Dashboard() {
                     <strong>Email:</strong> {currentUser.email}
                 </Card.Body>
             </Card>
-            <div className="w-100 text-center mt-2">
+            <div className="w-100 text-right mt-2">
                 // Use handle logout function :)
                 <Button variant="link" onClick={handleLogout}>
                     Log out
