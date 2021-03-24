@@ -1,10 +1,10 @@
-import React, {useRef} from 'react'
+import React, { useRef } from 'react'
 import { Form, Button, Card, Alert } from "react-bootstrap"
 import { Link, useHistory } from "react-router-dom"
 import {useAuth} from '../context/AuthContext'
 import useState from 'react'
 
-export default function Signup({children}) {
+export default functionSignup({children}) {
     const emailRef = useRef()
     const passwordRef = useRef()
     const passwordConfirmRef = useRef()
@@ -23,7 +23,7 @@ export default function Signup({children}) {
         try{
             setError('')
             setLoading(true)
-         await signup(emailRef.current.value, passwordRef.current.value)
+         signup(emailRef.current.value, passwordRef.current.value)
          history.push('/')
         } catch {
             setError('Failed to create an account')
@@ -57,7 +57,7 @@ export default function Signup({children}) {
         </Card.Body>
       </Card>
       <div className="w-100 text-center mt-2">
-        Already have an account? <Link to="/login">Log In</Link>
+        Already have an account? <Link to="/login">Login</Link>
       </div>
     </div>
     )

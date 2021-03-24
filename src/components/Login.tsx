@@ -22,7 +22,7 @@ export default function Login({children}) {
         return setError('Incorrect password try again!')
     }
 
-    try{
+    try {
         setError('')
         setLoading(true)
         // We use the useAuth() as that is what we imported from contexted :)
@@ -32,9 +32,10 @@ export default function Login({children}) {
 
     } catch{
         setError("Failed to log in :/")
-        
+    
     setLoading(false)
     }
+    
     
     return(
         <>
@@ -52,7 +53,7 @@ export default function Login({children}) {
                         <Form.Control type="password" ref={passwordRef} required />
                     </Form.Group>
                 <Button disabled={loading} className="w-100" type="submit">
-                    Log import { moduleName } from 'react-native'
+                    Login
                 </Button>
                     </Form>
                 </Card.Body>
