@@ -2,11 +2,10 @@ import React from 'react';
 import { Container } from "react-bootstrap"
 import { Navbar, Nav, Form, Button, FormControl} from 'react-bootstrap';
 import AuthProvider from "../contexts/AuthContext";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
-import Router from 'react-dom';
-import { Login }  from './Login'
-import { Signup } from './Signup'
-import { Dashboard } from './Dashboard'
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import  Login   from './Login'
+import Signup  from './Signup'
+import  Dashboard from './Dashboard'
 import ForgetPassword from "./ForgetPassword"
 
 function App() {
@@ -19,7 +18,7 @@ function App() {
           <Nav.Link href="/login" component={Login}>Login</Nav.Link>
           <Nav.Link href="/signup" component={Signup}>Signup</Nav.Link>
           <Nav.Link href="/dashboard" component={Dashboard}>Dashboard></Nav.Link>
-          <Nav.Link href='/forgot-password' component={ForgotPassword}></Nav.Link>
+          <Nav.Link href='/forgot-password' component={ForgetPassword}></Nav.Link>
         </Nav>
         <Form inline>
           <FormControl type="text" placeholder="Search" className="mr-sm-2" />
